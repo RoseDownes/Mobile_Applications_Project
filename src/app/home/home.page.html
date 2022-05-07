@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
+    <ion-title color="primary">
+      Dog App
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,36 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Dog App</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <h4>Try searching {{favDog}} in list of dogs</h4> 
+  <ion-button [routerLink]="['/dogs-page']" expand="block" fill="outline">Check out List of Dogs</ion-button>
+
+  <ion-button [routerLink]="['/random-dog']" expand="full" shape="round" color="secondary" >Random Dog Page</ion-button>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 >
+        <ion-card>
+          <h4>{{myStatus}}</h4>
+          <img src="{{dogPic}}" >
+        </ion-card>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col> <p>How much do you love dogs?</p></ion-col>
+      <ion-col> <ion-button [routerLink]="['/dog-status']" shape="round" color="medium">Update here</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+<ion-button size="large" [routerLink]="['/camera']" shape="round" >
+  <ion-icon name="camera-sharp"></ion-icon>
+   Photos 
+  <ion-icon name="paw"></ion-icon>
+</ion-button>
+
 </ion-content>

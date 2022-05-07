@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-back-button> </ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-searchbar 
+  placeholder="Search"
+  [(ngModel)]="searchTerm"
+  showCancelButton="focus"
+  animated></ion-searchbar>
+
+  <ion-card  *ngFor="let dog of DogData | filter:searchTerm">
+    <ion-card-header>
+      <ion-card-subtitle>{{dog.origin}}</ion-card-subtitle>
+      <ion-card-title>{{dog.name}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <img src="{{dog.image.url}}">
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
